@@ -26,10 +26,10 @@ class ChelseaBot:
         if any(word.lower() in message_text for word in self.trigger_words):
             if update.message.is_topic_message:
                 thread_id = update.message.message_thread_id
-                await update.message.reply_text('Маму ебал, они проходные', message_thread_id=thread_id)
+                await update.message.reply_text('***', message_thread_id=thread_id)
                 logging.info(f'Ответ в треде: {thread_id}')
             else:
-                await update.message.reply_text('Маму ебал, они проходные')
+                await update.message.reply_text('***')
                 logging.info('Ответ не в треде')
 
     def run(self) -> None:
@@ -49,7 +49,7 @@ class ChelseaBot:
                 await asyncio.sleep(5)
 
 if __name__ == '__main__':
-    TOKEN = '6619882530:AAG-leamGkXJw9AtYDfJt7gfmX8P7cqLuvw'
+    TOKEN = '***'
     bot = ChelseaBot(TOKEN)
     bot.run()
 
