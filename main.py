@@ -33,13 +33,10 @@ class ChelseaBot:
                 logging.info('Ответ не в треде')
 
     def run(self) -> None:
-        # Регистрируем обработчик команды /start
         self.application.add_handler(CommandHandler("start", self.start_command))
 
-        # Регистрируем обработчик сообщений
         self.application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, self.handle_message))
 
-        # Запускаем бота
         self.application.run_polling()
 
     async def restart(self):
