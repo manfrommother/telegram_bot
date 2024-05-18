@@ -8,7 +8,7 @@ logging.basicConfig(
     level=logging.INFO
 )
 
-class ChelseaBot:
+class JffBot:
     def __init__(self, token: str):
         self.token = token
         self.application = Application.builder().token(self.token).build()
@@ -50,6 +50,6 @@ class ChelseaBot:
 
 if __name__ == '__main__':
     TOKEN = '***'
-    bot = ChelseaBot(TOKEN)
+    bot = JffBot(TOKEN)
     bot.run()
 
